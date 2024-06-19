@@ -16,7 +16,8 @@ $res = $conn->query($sql) or die($conn->error);
 
 $user = $res->fetch_assoc();
 
-if (password_verify($senha, $user['senha'])) {
+// if (password_verify($senha, $user['senha'])) {
+if ($senha == $user['senha']) {
     $qtd = $res->num_rows;
     if ($qtd > 0) {
         $_SESSION["id"] = $user['id'];
