@@ -5,7 +5,8 @@ if (isset($_POST['nome_completo'], $_POST['email'], $_POST['senha'])) {
 
     $nome_completo = $_POST['nome_completo'];
     $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+    // $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+    $senha = $_POST['senha'];
     $telefone = $_POST['telefone'];
 
     $sql = "INSERT INTO user (nome_completo, email, senha, telefone)
