@@ -18,7 +18,6 @@ $user = $res->fetch_assoc();
 
 if (password_verify($senha, $user['senha'])) {
     $qtd = $res->num_rows;
-
     if ($qtd > 0) {
         $_SESSION["id"] = $user['id'];
         $_SESSION["nome_completo"] = $user['nome_completo'];

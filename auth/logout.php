@@ -6,5 +6,6 @@ unset($_SESSION["email"]);
 unset($_SESSION["telefone"]);
 unset($_SESSION["id"]);
 session_destroy();
+echo "<script>alert('usuario deslogado com sucesso');</script>";
 echo "<script>location.href='/';</script>";
 exit;
