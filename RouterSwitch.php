@@ -17,7 +17,7 @@ abstract class RouteSwitch
     }
     public function home()
     {
-        require __DIR__ . '/pages/home.php';
+        require __DIR__ . '/pages/home.html';
     }
     public function __call($name, $arguments)
     {
