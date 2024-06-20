@@ -11,6 +11,8 @@
 </head>
 <?php
 
+include dirname(__FILE__) . '/../database/config.php';
+
 $sql = "SELECT * FROM item;
 $items = $conn->query($sql) or die($conn->error);
 
