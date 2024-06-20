@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleFormulario.css">
+    <title>Achados e Perdidos</title>
+</head>
+
+<body>
+    <header>
+        <div class="titulo">Achados e Perdidos UDI</div>
+    </header>
+    <main class="main">
+        <div class="subtitulo">Formulário</div>
+        <form method="post">
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select name="status" id="status">
+                    <option value="achado">Achado</option>
+                    <option value="perdido">Perdido</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo de objeto</label>
+                <select name="tipo" id="tipo">
+                    <option value="documento">Documento</option>
+                    <option value="celular">Celular</option>
+                    <option value="cartao">Cartão</option>
+                    <option value="roupa">Roupa</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição</label>
+                <textarea name="descricao" id="descricao" cols="30" rows="5"></textarea>
+            </div>
+            <div class="buttons">
+                <button type="reset" class="btn enviar">Cancelar</button>
+                <button type="submit" class="btn cancelar">Enviar</button>
+            </div>
+        </form>
+        <div class="bntUP">
+            <img src="imagem/Group 5.png" alt="Upload" width="150px">
+        </div>
+    </main>
+</body>
+
+</html>
