@@ -30,29 +30,31 @@ header {
     z-index: 1000;
 }
 
-/* .main {
+.main {
     margin-left: 10px;
     align-items: center;
 
-} */
+}
 
-/* .texto {
+*/ .texto {
     margin: 10px;
     align-items: center;
     padding: 5px;
 
-} */
+}
 
-/* h1{
+*/ h1 {
     display: flex;
     justify-content: center;
 }
-h2{
+
+h2 {
     display: flex;
-    justify-content:center ;
+    justify-content: center;
     margin: 3px;
     font-size: 20px;
-} */
+}
+
 .descricao {
     display: flex;
     justify-content: space-around;

@@ -9,39 +9,12 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>Achados e Perdidos UDI - Login</title>
 </head>
-<?php
-
-include dirname(__FILE__) . '/../database/config.php';
-
-$sql = "SELECT * FROM item;
-$items = $conn->query($sql) or die($conn->error);
-
-$result_items = '';
-if ($items->num_rows) {
-    while ($item = $items->fetch_object()) {
-        $result_items .= '<div class="col-sm-6 mb-3 mb-sm-0 mt-3" id="'.$item->id . '">
-            <div class="card">
-                <div class="card-body">
-                    <p class="card-title">' .$item->status_item  . '</p>
-                    <p class="card-title">' .$item->tipo_objeto  . '</p>
-                    <p class="card-text"> <b>Descrição: </b>'. $item->descricao . '</p>
-                    <p class="card-text"> <b>Enscrito em: </b>'.date('d/m/Y', strtotime($item->data_obj)) . '</p>
-                        <a href="/resgatar?id=' . $item->id . '" class="btn btn-primary">Solicitar resgate</a>
-                </div>
-            </div>
-        </div>'
-
-        ;
-
-    }
-}
-?>
 
 <body>
   <header>
     <div class="titulo">Achados e Perdidos UDI</div>
   </header>
-  <main class="container p-5">
+  <main class="main container">
     <div class="texto">
       <h1>
         <div class="descricao">Descrição do Site</div>
@@ -57,17 +30,92 @@ if ($items->num_rows) {
         de outra pessoa.
       </p>
     </div>
+
     <h1>Itens encontrados</h1>
     <div class="container">
-      <?php if($items->num_rows > 0) {?>
-      <?=$result_items;
-        } else {?>
-      <div style="height:45vh; width: 70vw;" class="d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-6">Sem itens cadastrados</h1>
-
+      <div class="card">
+        <div class="imagem">
+          <img class="im" src="fotos/documento.jpg" alt="">
+        </div>
+        <div class="text">
+          <h2 class="text-main">DOCUMENTOS</h2>
+          <p class="informacao"></p>
+        </div>
+        <div class="button">
+          <a href="paginashtml/Alimentação.html"><button type="button" class="btn">SAIBA MAIS</button></a>
+        </div>
       </div>
-      <?php }?>
 
+      <div class="card">
+        <div class="imagem">
+          <img class="im" src="fotos/eletronicos.jpg" alt="">
+        </div>
+        <div class="text">
+          <h2 class="text-main">ELETRONICOS</h2>
+          <p class="informacao"> </p>
+        </div>
+        <div class="button">
+          <a href="paginashtml/comoCuidar.html"><button type="button" class="btn">SAIBA MAIS</button></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="imagem">
+          <img class="im" src="fotos/exames.jpg">
+        </div>
+        <div class="text">
+          <h2 class="text-main">EXAMES MÉDICOS</h2>
+          <p class="informacao">
+
+          </p>
+        </div>
+        <div class="button">
+          <a href="paginashtml/Vacinacao.html"><button type="button" class="btn">SAIBA MAIS</button></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="imagem">
+          <img class="im" src="fotos/objetos.webp" alt="">
+        </div>
+        <div class="text">
+          <h2 class="text-main">OBJETOS</h2>
+          <p class="informacao">
+          </p>
+        </div>
+        <div class="button">
+          <a href="paginashtml/comoAdotar.html"> <button type="button" class="btn">SAIBA MAIS</button></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="imagem">
+          <img class="im" src="fotos/carteiras.jpg" alt="">
+        </div>
+        <div class="text">
+          <h2 class="text-main">CARTEIRA</h2>
+          <p class="informacao">
+          </p>
+        </div>
+        <div class="button">
+          <a href=""><button type="button" class="btn">SAIBA MAIS</button></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="imagem">
+          <img class="im" src="fotos/outros.png" alt="">
+        </div>
+        <div class="text">
+          <h2 class="text-main">OUTROS</h2>
+          <p class="informacao">
+          </p>
+        </div>
+        <div class="button">
+          <a href="paginashtml/Abandono.html"><button type="button" class="btn">SAIBA MAIS</button></a>
+
+        </div>
+      </div>
     </div>
     <div class="encontrou">
       <h3>Encontrou um item?</h3>
@@ -76,7 +124,7 @@ if ($items->num_rows) {
 
     <footer>
       <div class="termos">
-        <div class="responsa p-3">
+        <div class="responsa">
           <h2>Termo de responsabilidade</h2>
         </div>
         <div class="bntaceitar">
