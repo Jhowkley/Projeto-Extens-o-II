@@ -30,7 +30,6 @@ if ($items->num_rows) {
         </div>'
 
         ;
-    $result_options .= '<option value="' . $inscricao->id . '">' . $inscricao->nome . '</option> ';
 
     }
 }
@@ -63,6 +62,7 @@ if ($items->num_rows) {
         } else {?>
       <div style="height:45vh; width: 70vw;" class="d-flex flex-column justify-content-center align-items-center">
         <h1 class="display-6">Sem itens cadastrados</h1>
+
       </div>
       <?php }?>
 
