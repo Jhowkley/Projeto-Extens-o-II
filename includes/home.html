@@ -9,25 +9,28 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>Achados e Perdidos UDI - Login</title>
 </head>
+<!-- monta cards com dados vindos do banco -->
 <?php
 $todos_itens = '';
 if ($itens->num_rows > 0) {
     while ($item = $itens->fetch_object()) {
-        $todos_itens .= '<div class="card">
+        $todos_itens .= '<div class="card" id="'.$item->id . '">
       <div class="imagem">
-        <img class="im" src="fotos/documento.jpg" alt="">
-      </div>
-      <div class="text">
-        <h2 class="text-main">DOCUMENTOS</h2>
-        <p class="informacao"></p>
-      </div>
-      <div class="button">
-        <a href="paginashtml/Alimentação.html"><button type="button" class="btn">SAIBA MAIS</button></a>
-      </div>
-    </div>';
-    }
+        <img class="im" src="../assets/images/items_images/<?php echo $item->img_url; ?>" alt="">
+</div>
+<div class="text">
+  <h2 class="text-main">'. $item->tipo_objeto .'</h2>
+  <p class="informacao"> '. $item->descricao .'</p>
+  <p class="informacao"><b>Encontrado em: </b>'.date('d/m/Y', strtotime($item->data_obj)) . '</p>
+</div>
+<div class="button">
+  <a href="/resgatar?id=' . $item->id . '" class="btn btn-primary">Resgatar</a>
+</div>
+</div>';
+}
 }
 ?>
+<!-- monta cards com dados vindos do banco fim -->
 
 <body>
   <header>
@@ -49,19 +52,20 @@ if ($itens->num_rows > 0) {
         de outra pessoa.
       </p>
     </div>
-
+    <!-- Não mexer nesse trecho inicio -->
     <h1>Itens encontrados</h1>
     <div class="container">
-
-      <?php if($itens->num_rows > 0) {?>
-      <?=$todos_itens;
+      <div class="row">
+        <?php if($itens->num_rows > 0) {?>
+        <?=$todos_itens;
         } else {?>
-      <div style="height:45vh; width: 70vw;" class="d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-6">Você ainda não tem inscrições</h1>
-        <h3 class="lead">Click <a href="/inscricoes"> aqui </a>para fazer sua inscrição</h3>
+        <div style="height:45vh; width: 70vw;" class="d-flex flex-column justify-content-center align-items-center">
+          <h1 class="display-6">Você ainda não tem inscrições</h1>
+          <h3 class="lead">Click <a href="/inscricoes"> aqui </a>para fazer sua inscrição</h3>
+        </div>
+        <?php }?>
       </div>
-      <?php }?>
-
+      <!-- Não mexer nesse trecho fim -->
       <div class="encontrou">
         <h3>Encontrou um item?</h3>
         <h3>Cadastre aqui para que o dono possa encontrar</h3>
