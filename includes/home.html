@@ -16,10 +16,11 @@ if ($itens->num_rows > 0) {
     while ($item = $itens->fetch_object()) {
         $todos_itens .= '<div class="card" id="'.$item->id . '">
       <div class="imagem">
-        <img class="im" src="../assets/images/items_images/<?php echo $item->img_url;?>" alt="foto do item">
-      </div>
+        <img class="im" src="../assets/images/items_images/celular.jpg" alt="">
+</div>
 <div class="text">
   <h2 class="text-main">'. $item->tipo_objeto .'</h2>
+  <h2 class="text-main">'. $item->img_url .'</h2>
   <p class="informacao"> '. $item->descricao .'</p>
   <p class="informacao"><b>Encontrado em: </b>'.date('d/m/Y', strtotime($item->data_obj)) . '</p>
 </div>
@@ -54,7 +55,7 @@ if ($itens->num_rows > 0) {
     </div>
     <!-- Não mexer nesse trecho inicio -->
     <h1>Itens encontrados</h1>
-    <div class="row">
+    <div class="container">
       <?php if($itens->num_rows > 0) {?>
       <?=$todos_itens;
         } else {?>
@@ -63,23 +64,22 @@ if ($itens->num_rows > 0) {
         <h3 class="lead">Click <a href="/inscricoes"> aqui </a>para fazer sua inscrição</h3>
       </div>
       <?php }?>
-    </div>
-    <!-- Não mexer nesse trecho fim -->
-    <div class="encontrou">
-      <h3>Encontrou um item?</h3>
-      <h3>Cadastre aqui para que o dono possa encontrar</h3>
-    </div>
-
-    <footer>
-      <div class="termos">
-        <div class="responsa">
-          <h2>Termo de responsabilidade</h2>
-        </div>
-        <div class="bntaceitar">
-          <a href="">Aceitar</a>
-        </div>
+      <!-- Não mexer nesse trecho fim -->
+      <div class="encontrou">
+        <h3>Encontrou um item?</h3>
+        <h3>Cadastre aqui para que o dono possa encontrar</h3>
       </div>
-    </footer>
+
+      <footer>
+        <div class="termos">
+          <div class="responsa">
+            <h2>Termo de responsabilidade</h2>
+          </div>
+          <div class="bntaceitar">
+            <a href="">Aceitar</a>
+          </div>
+        </div>
+      </footer>
   </main>
 </body>
 
