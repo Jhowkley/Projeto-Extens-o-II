@@ -20,6 +20,7 @@ if ($itens->num_rows > 0) {
 </div>
 <div class="text">
   <h2 class="text-main">'. $item->tipo_objeto .'</h2>
+  <h2 class="text-main">'. $item->img_url .'</h2>
   <p class="informacao"> '. $item->descricao .'</p>
   <p class="informacao"><b>Encontrado em: </b>'.date('d/m/Y', strtotime($item->data_obj)) . '</p>
 </div>
