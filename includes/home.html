@@ -16,11 +16,10 @@ if ($itens->num_rows > 0) {
     while ($item = $itens->fetch_object()) {
         $todos_itens .= '<div class="card" id="'.$item->id . '">
       <div class="imagem">
-        <img class="im" src="../assets/images/items_images/<?php echo $item->img_url; ?>" alt="">
+        <img class="im" src="../assets/images/items_images/celular.jpg" alt="foto do item">
 </div>
 <div class="text">
   <h2 class="text-main">'. $item->tipo_objeto .'</h2>
-  <h2 class="text-main">'. $item->img_url .'</h2>
   <p class="informacao"> '. $item->descricao .'</p>
   <p class="informacao"><b>Encontrado em: </b>'.date('d/m/Y', strtotime($item->data_obj)) . '</p>
 </div>
