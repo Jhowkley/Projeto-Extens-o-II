@@ -23,6 +23,10 @@ abstract class RouteSwitch
     {
         require __DIR__ . '/pages/items.php';
     }
+    public function resgatar()
+    {
+        require __DIR__ . '/pages/resgatar.php';
+    }
     public function __call($name, $arguments)
     {
         http_response_code(404);
