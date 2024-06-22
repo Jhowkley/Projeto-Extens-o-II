@@ -11,26 +11,6 @@
 </head>
 
 <body>
-  <?php
-  $todos_itens = '';
-  if($itens->num_rows > 0){
-    while($item = $itens->fetch_object()){
-      $todos_itens .= '<h1>Item</h1>'
-      <!-- $todos_itens .= '<div class="card">
-        <div class="imagem">
-          <img class="im" src="fotos/documento.jpg" alt="">
-        </div>
-        <div class="text">
-          <h2 class="text-main">DOCUMENTOS</h2>
-          <p class="informacao"></p>
-        </div>
-        <div class="button">
-          <a href="paginashtml/Alimentação.html"><button type="button" class="btn">SAIBA MAIS</button></a>
-        </div>
-      </div>' -->
-    }
-  }
-  ?>
   <header>
     <div class="titulo">Achados e Perdidos UDI</div>
   </header>
