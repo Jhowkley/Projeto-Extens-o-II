@@ -9,6 +9,25 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>Achados e Perdidos UDI - Login</title>
 </head>
+<?php
+$todos_itens = '';
+if ($itens->num_rows > 0) {
+    while ($item = $itens->fetch_object()) {
+        $todos_itens .= '<div class="card">
+      <div class="imagem">
+        <img class="im" src="fotos/documento.jpg" alt="">
+      </div>
+      <div class="text">
+        <h2 class="text-main">DOCUMENTOS</h2>
+        <p class="informacao"></p>
+      </div>
+      <div class="button">
+        <a href="paginashtml/Alimentação.html"><button type="button" class="btn">SAIBA MAIS</button></a>
+      </div>
+    </div>';
+    }
+}
+?>
 
 <body>
   <header>
@@ -34,9 +53,14 @@
     <h1>Itens encontrados</h1>
     <div class="container">
 
+      <?php if($itens->num_rows > 0) {?>
+      <?=$todos_itens;
+        } else {?>
       <div style="height:45vh; width: 70vw;" class="d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-6">Sem itens Perdidos</h1>
+        <h1 class="display-6">Você ainda não tem inscrições</h1>
+        <h3 class="lead">Click <a href="/inscricoes"> aqui </a>para fazer sua inscrição</h3>
       </div>
+      <?php }?>
 
       <div class="encontrou">
         <h3>Encontrou um item?</h3>
